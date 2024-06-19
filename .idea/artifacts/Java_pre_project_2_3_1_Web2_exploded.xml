@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Java_pre_project_2.3.1:Web2 exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Java_pre_project_2_3_1_Web2_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Java_pre_project_2.3.1/web/Web2" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Java_pre_project_2.3.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
