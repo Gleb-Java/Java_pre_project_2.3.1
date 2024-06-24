@@ -4,9 +4,9 @@ import CRUDApp.model.User;
 import java.util.List;
 
 public interface UserDao {
-    public void insertUser(User user);
-    public void updateUser(User user);
-    public void deleteUser(User user);
-    public User getUserById(int id);
-    public List<User> getAllUsers();
+    void insertUser(User user);
+    void updateUser(User user);
+    void deleteUser(User user);
+    User getUserById(int id);
+    List<User> getAllUsers();
 }

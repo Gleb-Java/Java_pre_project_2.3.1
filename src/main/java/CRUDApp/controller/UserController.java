@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
+    @Autowired
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
 
 
     @GetMapping( "/")
