@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -42,12 +43,8 @@ public class UserController {
     }
 
     @PostMapping("/updateUser")
-    public String updateUser(@RequestParam("id") int id,@RequestParam("name")String name, @RequestParam("email")String email) {
-        User user = userService.getUserById(id);
-        user.setName(name);
-        user.setEmail(email);
-        userService.updateUser(id,new User(name,email));
-
+    public String updateUser(@ModelAttribute User user) {
+        userService.updateUser(user);
         return "redirect:/";
     }
 

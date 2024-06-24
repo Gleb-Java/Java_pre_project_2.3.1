@@ -26,13 +26,9 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void updateUser(int id,User updateUser){
-        User existingUser = userDao.getUserById(id);
-        if(existingUser != null){
-            existingUser.setName(updateUser.getName());
-            existingUser.setEmail(updateUser.getEmail());
-            userDao.updateUser(existingUser);
-        }
+    public void updateUser(User updateUser){
+        userDao.updateUser(updateUser);
+
     }
 
     @Transactional
@@ -41,13 +37,13 @@ public class UserServiceImp implements UserService {
         userDao.deleteUser(user);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public User getUserById(int id){
         return userDao.getUserById(id);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public List<User> getAllUsers(){
         return userDao.getAllUsers();
